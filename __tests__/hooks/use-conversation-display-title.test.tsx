@@ -77,7 +77,7 @@ it("keeps both titles through launch, task and saved metadata, then adopts gener
     },
     { wrapper },
   );
-  expect(result.current).toEqual(["SIDEBAR$NEW_CHAT", "SIDEBAR$NEW_CHAT"]);
+  expect(result.current).toEqual(["SIDEBAR$NEW_PROJECT", "SIDEBAR$NEW_PROJECT"]);
   act(() =>
     useConversationLaunchStore
       .getState()
@@ -85,7 +85,7 @@ it("keeps both titles through launch, task and saved metadata, then adopts gener
   );
   routeId = "task-start";
   rerender();
-  expect(result.current).toEqual(["SIDEBAR$NEW_CHAT", "SIDEBAR$NEW_CHAT"]);
+  expect(result.current).toEqual(["SIDEBAR$NEW_PROJECT", "SIDEBAR$NEW_PROJECT"]);
   act(() =>
     useConversationLaunchStore
       .getState()
@@ -93,7 +93,7 @@ it("keeps both titles through launch, task and saved metadata, then adopts gener
   );
   routeId = id;
   rerender();
-  expect(result.current).toEqual(["SIDEBAR$NEW_CHAT", "SIDEBAR$NEW_CHAT"]);
+  expect(result.current).toEqual(["SIDEBAR$NEW_PROJECT", "SIDEBAR$NEW_PROJECT"]);
   act(() => {
     client.setQueryData(detailKey, metadata("Conversation 12345"));
     client.setQueryData(listKey, {
@@ -197,8 +197,8 @@ it("reveals a shared early title before sandbox readiness and preserves a manual
     { wrapper },
   );
   expect(result.current).toEqual([
-    { title: "SIDEBAR$NEW_CHAT", pending: true },
-    { title: "SIDEBAR$NEW_CHAT", pending: true },
+    { title: "SIDEBAR$NEW_PROJECT", pending: true },
+    { title: "SIDEBAR$NEW_PROJECT", pending: true },
   ]);
   act(() =>
     client.setQueryData(taskKey, {
@@ -249,7 +249,7 @@ it("ends the shimmer at the shared deadline even if the server stops responding"
   const { result } = renderHook(() => useConversationDisplayTitleState()(id), {
     wrapper,
   });
-  expect(result.current).toEqual({ title: "SIDEBAR$NEW_CHAT", pending: true });
+  expect(result.current).toEqual({ title: "SIDEBAR$NEW_PROJECT", pending: true });
   act(() => vi.advanceTimersByTime(1001));
   expect(result.current).toEqual({ title: prompt, pending: false });
   vi.useRealTimers();

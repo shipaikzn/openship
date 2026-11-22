@@ -1336,11 +1336,11 @@ export function ConversationPanel({
                   "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border",
                 )}
               >
-                {t(I18nKey.SIDEBAR$CONVERSATIONS)}
+                {t(I18nKey.SIDEBAR$PROJECTS)}
               </button>
             ) : (
               <span className="min-w-0 truncate text-sm font-medium text-muted">
-                {t(I18nKey.SIDEBAR$CONVERSATIONS)}
+                {t(I18nKey.SIDEBAR$PROJECTS)}
               </span>
             )}
             <div className="ml-auto flex shrink-0 items-center gap-0.5">

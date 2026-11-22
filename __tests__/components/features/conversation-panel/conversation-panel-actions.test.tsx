@@ -113,7 +113,7 @@ describe("ConversationPanel conversation actions", () => {
           name: "CONVERSATION$STARTING_CONVERSATION",
         }),
       ).toBeInTheDocument();
-      expect(screen.getByText("SIDEBAR$NEW_CHAT")).toHaveAttribute(
+      expect(screen.getByText("SIDEBAR$NEW_PROJECT")).toHaveAttribute(
         "aria-busy",
         "true",
       );
@@ -167,7 +167,7 @@ describe("ConversationPanel conversation actions", () => {
       </QueryClientProvider>,
     );
     const card = await screen.findByTestId("conversation-card");
-    expect(within(card).getByText("SIDEBAR$NEW_CHAT")).toHaveAttribute(
+    expect(within(card).getByText("SIDEBAR$NEW_PROJECT")).toHaveAttribute(
       "aria-busy",
       "true",
     );
@@ -391,7 +391,7 @@ describe("ConversationPanel conversation actions", () => {
     await waitFor(() => {
       expect(
         usePinnedConversationsStore.getState().pinsByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("2");
     });
@@ -431,7 +431,7 @@ describe("ConversationPanel conversation actions", () => {
     await waitFor(() => {
       expect(
         useArchivedConversationsStore.getState().archivesByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("1");
     });
@@ -489,7 +489,7 @@ describe("ConversationPanel conversation actions", () => {
     ).toContain("1");
     expect(
       useArchivedConversationsStore.getState().archivesByBackendId[
-        "default-local"
+      "default-local"
       ],
     ).toContain("1");
 
@@ -498,12 +498,12 @@ describe("ConversationPanel conversation actions", () => {
     await waitFor(() => {
       expect(
         usePinnedConversationsStore.getState().pinsByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("1");
       expect(
         useArchivedConversationsStore.getState().archivesByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("1");
     });
@@ -541,7 +541,7 @@ describe("ConversationPanel conversation actions", () => {
     ).toContain("1");
     expect(
       useArchivedConversationsStore.getState().archivesByBackendId[
-        "default-local"
+      "default-local"
       ],
     ).toContain("1");
     expect(write).toHaveBeenCalledTimes(1);
@@ -550,12 +550,12 @@ describe("ConversationPanel conversation actions", () => {
     await waitFor(() => {
       expect(
         usePinnedConversationsStore.getState().pinsByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("1");
       expect(
         useArchivedConversationsStore.getState().archivesByBackendId[
-          "default-local"
+        "default-local"
         ] ?? [],
       ).not.toContain("1");
     });

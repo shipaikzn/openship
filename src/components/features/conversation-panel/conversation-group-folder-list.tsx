@@ -135,7 +135,7 @@ export function ConversationGroupFolderList({
 
   return (
     <nav
-      aria-label={t(I18nKey.SIDEBAR$CONVERSATIONS)}
+      aria-label={t(I18nKey.SIDEBAR$PROJECTS)}
       className="space-y-1 md:space-y-0.5 pb-1"
     >
       {groups.map((group) => (
