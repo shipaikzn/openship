@@ -128,8 +128,8 @@ export function useConversationDisplayTitleState() {
       const activeTask =
         !foreignTask && matchingTaskId
           ? queryClient.getQueryData<AppConversationStartTask>(
-              CONVERSATION_QUERY_KEYS.startTask(matchingTaskId),
-            )
+            CONVERSATION_QUERY_KEYS.startTask(matchingTaskId),
+          )
           : undefined;
       const realId =
         launch?.conversationId ?? activeTask?.app_conversation_id ?? id;
@@ -148,7 +148,7 @@ export function useConversationDisplayTitleState() {
       candidates.sort(
         (a, b) =>
           Date.parse(b.conversation!.updated_at) -
-            Date.parse(a.conversation!.updated_at) || b.fetchedAt - a.fetchedAt,
+          Date.parse(a.conversation!.updated_at) || b.fetchedAt - a.fetchedAt,
       );
       const serverTitle =
         candidates[0]?.conversation?.title ||
@@ -182,13 +182,13 @@ export function useConversationDisplayTitleState() {
         optimisticPending
       );
       const title = pending
-        ? t(I18nKey.SIDEBAR$NEW_CHAT)
+        ? t(I18nKey.SIDEBAR$NEW_PROJECT)
         : generation?.title?.trim() ||
-          serverTitle?.trim() ||
-          activeTask?.request.title?.trim() ||
-          prompt?.trim().replace(/\s+/g, " ") ||
-          fallback?.trim() ||
-          t(I18nKey.SIDEBAR$NEW_CHAT);
+        serverTitle?.trim() ||
+        activeTask?.request.title?.trim() ||
+        prompt?.trim().replace(/\s+/g, " ") ||
+        fallback?.trim() ||
+        t(I18nKey.SIDEBAR$NEW_PROJECT);
       return { title, pending };
     },
     [

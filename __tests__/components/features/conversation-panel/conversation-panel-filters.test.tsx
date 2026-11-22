@@ -407,7 +407,7 @@ describe("ConversationPanel filters and pagination", () => {
       expect(screen.getByText("Old 2")).toBeInTheDocument();
 
       const summary = screen.getByTestId("older-conversations-summary");
-      expect(summary).toHaveTextContent("SIDEBAR$CONVERSATIONS");
+      expect(summary).toHaveTextContent("SIDEBAR$PROJECTS");
       expect(
         within(summary).getByTestId("conversation-layouts-toggle"),
       ).toBeInTheDocument();
