@@ -139,8 +139,8 @@ export function SidebarRailBody({
           <div
             className={cn(
               collapsed &&
-                showCollapseToggle &&
-                "flex h-full w-full items-center justify-start pl-2.5 transition-opacity duration-150",
+              showCollapseToggle &&
+              "flex h-full w-full items-center justify-start pl-2.5 transition-opacity duration-150",
               collapsed && showCollapsedExpandButton && "opacity-0",
             )}
           >
@@ -207,7 +207,7 @@ export function SidebarRailBody({
         <SidebarNavLink
           to="/conversations"
           end
-          label={t(I18nKey.SIDEBAR$NEW_CHAT)}
+          label={t(I18nKey.SIDEBAR$NEW_PROJECT)}
           testId="sidebar-conversations-link"
           collapsed={collapsed}
           icon={<Plus width={ICON_SIZE} height={ICON_SIZE} />}

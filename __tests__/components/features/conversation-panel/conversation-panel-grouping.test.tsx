@@ -113,7 +113,7 @@ describe("ConversationPanel grouped folder ordering", () => {
       expect(
         within(summary).queryByTestId("conversations-header-toggle"),
       ).toBeNull();
-      expect(summary).toHaveTextContent("SIDEBAR$CONVERSATIONS");
+      expect(summary).toHaveTextContent("SIDEBAR$PROJECTS");
     });
 
     it("stays a static label when the grouped view has no folders", async () => {
@@ -130,7 +130,7 @@ describe("ConversationPanel grouped folder ordering", () => {
           within(summary).queryByTestId("conversations-header-toggle"),
         ).toBeNull();
       });
-      expect(summary).toHaveTextContent("SIDEBAR$CONVERSATIONS");
+      expect(summary).toHaveTextContent("SIDEBAR$PROJECTS");
     });
   });
 
